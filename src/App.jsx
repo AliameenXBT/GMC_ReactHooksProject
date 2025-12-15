@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import MovieList from "./components/MovieList";
 import Filter from "./components/Filter";
 import AddMovie from "./components/AddMovie";
+import MovieDetails from "./components/MovieDetails";
 import "./App.css";
 
 // 🔹 IMPORT LOCAL IMAGES
@@ -16,6 +18,7 @@ const defaultMovies = [
     description: "Dream within a dream",
     posterURL: inceptionImg,
     rating: 5,
+    trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
   },
   {
     id: 2,
@@ -23,6 +26,7 @@ const defaultMovies = [
     description: "Space and time",
     posterURL: interstellarImg,
     rating: 4,
+    trailer: "https://www.youtube.com/embed/zSWdZVtXT7E",
   },
 ];
 
@@ -60,11 +64,35 @@ function App() {
 
   return (
     <div className="app">
-      <h1>🎬 Movie App</h1>
+      <Routes>
+        {/* 🏠 HOME PAGE */}
+        <Route
+          path="/"
+          element={
+            <>
+              <h1>🎬 Movie App</h1>
 
-      <Filter setTitleFilter={setTitleFilter} setRateFilter={setRateFilter} />
-      <AddMovie addMovie={addMovie} />
-      <MovieList movies={filteredMovies} removeMovie={removeMovie} />
+              <Filter
+                setTitleFilter={setTitleFilter}
+                setRateFilter={setRateFilter}
+              />
+
+              <AddMovie addMovie={addMovie} />
+
+              <MovieList
+                movies={filteredMovies}
+                removeMovie={removeMovie}
+              />
+            </>
+          }
+        />
+
+        {/* 🎥 MOVIE DETAILS PAGE */}
+        <Route
+          path="/movie/:id"
+          element={<MovieDetails movies={movies} />}
+        />
+      </Routes>
     </div>
   );
 }

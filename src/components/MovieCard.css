@@ -1,45 +1,64 @@
 .movie-card {
-  width: 220px;
-  background: #1e1e1e;
-  color: white;
-  border-radius: 10px;
+  width: 260px;
+  background-color: #1f1f1f;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
 }
 
 .movie-card:hover {
   transform: scale(1.05);
 }
 
+/* Link reset */
+.movie-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Poster image */
 .movie-card img {
   width: 100%;
-  height: 300px;
+  height: 350px;
   object-fit: cover;
 }
 
-.movie-card-content {
-  padding: 10px;
+/* Movie info */
+.movie-info {
+  padding: 12px;
+  text-align: center;
 }
 
-.movie-card h3 {
-  margin: 5px 0;
+.movie-info h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
 }
 
-.movie-card p {
+.movie-info p {
   font-size: 14px;
+  color: #ccc;
+  margin-bottom: 6px;
 }
 
+.rating {
+  color: gold;
+  font-weight: bold;
+}
+
+/* Delete button */
 .delete-btn {
-  margin-top: 10px;
-  padding: 6px 10px;
-  background: crimson;
-  color: white;
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
+  background-color: #ff4d4d;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-  background: darkred;
+  background-color: #ff1a1a;
 }

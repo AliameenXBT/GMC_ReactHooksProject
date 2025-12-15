@@ -1,0 +1,36 @@
+.movie-details {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.movie-details h2 {
+  margin-bottom: 10px;
+}
+
+.movie-details p {
+  margin-bottom: 20px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.movie-details iframe {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background-color: #ff1a1a;
+}
